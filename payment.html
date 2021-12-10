@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Gives webpage a favicon -->
+	<link rel="shortcut icon" type="image/jpg" href="images/techswipe.jpg"/>
+	<!-- links to css which gives cart icon -->
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+	<!-- Gives title to page -->
+    <title>Payment</title>
+	
+    <!-- Link to our own css -->
+    <link rel="stylesheet" href="style.css">
+	<!-- Link to Bootstrap css -->
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/album/">
+	<!-- Link to Bootstrap css -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<!-- Link to Bootstrap javascript for dropdown button -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+	<!-- Link to our own javascript for counting items in cart -->
+	<script src="shoppingcart.js"></script>
+
+    <!-- css code for when window size is smaller e.g mobile use -->
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+  </head>
+  <body>
+    
+<!-- Code for sidenav taken from w3schools.com -->	
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <!-- Keeps all items in sidenav in-line -->
+  <div class="nav-link">
+  <a href="index.html">Home</a>
+  <!-- Dropdown button from bootstrap in sidenav -->
+  <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Categories
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+			    <li><a class="dropdown-item" href="products.html">All products</a></li>
+                <li><a class="dropdown-item" href="homeapp.html">Home Tech</a></li>
+                <li><a class="dropdown-item" href="music.html">Music</a></li>
+                <li><a class="dropdown-item" href="gaming.html">Gaming</a></li>
+                <li><a class="dropdown-item" href="fitness.html">Fitness</a></li>
+				<li><a class="dropdown-item" href="accessories.html">Accessories</a></li>
+            </ul>
+  </div>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a type="button" class="btn btn-primary" href="log.html">Log In</a>
+  <a type="button" class="btn btn-success" href="sign.html">Sign Up</a>
+  </div>
+</div>
+
+<!-- JavaScript for sidenav -->
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+<!-- Top navigation taken from getbootstrap.com -->
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <!-- Hamburger icon used to activate sidenav -->
+	<a class="navbar-brand" onclick="openNav()" href="#">&#9776;</a>
+    <a class="navbar-brand" href="index.html">TECHSWIPE</a>
+    
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+	  <!-- Dropdown button from bootstrap in sidenav -->
+       <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Categories
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+			    <li><a class="dropdown-item" href="products.html">All products</a></li>
+                <li><a class="dropdown-item" href="homeapp.html">Home Tech</a></li>
+                <li><a class="dropdown-item" href="music.html">Music</a></li>
+                <li><a class="dropdown-item" href="gaming.html">Gaming</a></li>
+                <li><a class="dropdown-item" href="fitness.html">Fitness</a></li>
+				<li><a class="dropdown-item" href="accessories.html">Accessories</a></li>
+            </ul>
+  </div>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a type="button" class="btn btn-primary" href="log.html">Log In</a>
+        </li>
+        <br>
+        <li class="nav-item">
+          <a type="button" class="btn btn-success" href="sign.html">Sign Up</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+  <br><br><center><h3>Payment</h3></center><br><br>
+
+<!-- Payment form taken from w3schools.com -->
+<div class="row">
+  <div class="col-75">
+    <div class="payment">
+      <form action="/action_page.php">
+
+        <div class="row">
+          <div class="col-50">
+            <h3>Billing Address</h3>
+            <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="Your full name..">
+            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+            <input type="text" id="email" name="email" placeholder="john@example.com">
+            <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+            <input type="text" id="adr" name="address" placeholder="123 Fake Street">
+            <label for="city"><i class="fa fa-institution"></i> Postcode</label>
+            <input type="text" id="city" name="city" placeholder="D04H7G4">
+
+            <div class="row">
+              <div class="col-50">
+                <label for="state">Town</label>
+                <input type="text" id="state" name="state" placeholder="Dublin">
+              </div>
+              <div class="col-50">
+                <label for="zip">Area</label>
+                <input type="text" id="zip" name="zip" placeholder="4">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-50">
+            <h3>Payment Details</h3>
+            <label for="fname">Accepted Cards</label>
+            <div class="icon-container">
+              <i class="fa fa-cc-visa" style="color:navy;"></i>
+              <i class="fa fa-cc-amex" style="color:blue;"></i>
+              <i class="fa fa-cc-mastercard" style="color:red;"></i>
+              <i class="fa fa-cc-discover" style="color:orange;"></i>
+            </div>
+            <label for="cname">Name on Card</label>
+            <input type="text" id="cname" name="cardname" placeholder="Name on your card..">
+            <label for="ccnum">Credit card number</label>
+            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+            <label for="expmonth">Exp Month</label>
+            <input type="text" id="expmonth" name="expmonth" placeholder="September">
+
+            <div class="row">
+              <div class="col-50">
+                <label for="expyear">Exp Year</label>
+                <input type="text" id="expyear" name="expyear" placeholder="2018">
+              </div>
+              <div class="col-50">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" placeholder="352">
+              </div>
+            </div>
+          </div>
+        </div>
+        <label>
+          <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+        </label>
+        <input type="submit" value="Confirm payment" class="payment-btn">
+		<!-- Additional button to allow third party payment -->
+		<label for="expyear">Alternative payment methods</label>
+		<input type="button" value="PayPal" class="payment-btn btn-warning">
+		<input type="button" value="Apple Pay" class="payment-btn btn-dark">
+      </form>
+    </div>
+  </div>
+  
+</body>
+</html>

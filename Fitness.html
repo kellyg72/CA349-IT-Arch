@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Gives webpage a favicon -->
+	<link rel="shortcut icon" type="image/jpg" href="images/techswipe.jpg"/>
+	<!-- links to css which gives cart icon -->
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+	<!-- Gives title to page -->
+    <title>Fitness</title>
+	
+    <!-- Link to our own css -->
+    <link rel="stylesheet" href="style.css">
+	<!-- Link to Bootstrap css -->
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/album/">
+	<!-- Link to Bootstrap css -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<!-- Link to Bootstrap javascript for dropdown button -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+	<!-- Link to our own javascript for counting items in cart -->
+	<script src="shoppingcart.js"></script>
+
+    <!-- css code for when window size is smaller e.g mobile use -->
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+  </head>
+  <body>
+    
+<!-- Code for sidenav taken from w3schools.com -->	
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <!-- Keeps all items in sidenav in-line -->
+  <div class="nav-link">
+  <a href="index.html">Home</a>
+  <!-- Dropdown button from bootstrap in sidenav -->
+  <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Categories
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+			    <li><a class="dropdown-item" href="products.html">All products</a></li>
+                <li><a class="dropdown-item" href="homeapp.html">Home Tech</a></li>
+                <li><a class="dropdown-item" href="music.html">Music</a></li>
+                <li><a class="dropdown-item" href="gaming.html">Gaming</a></li>
+                <li><a class="dropdown-item" href="fitness.html">Fitness</a></li>
+				<li><a class="dropdown-item" href="accessories.html">Accessories</a></li>
+            </ul>
+  </div>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a type="button" class="btn btn-primary" href="log.html">Log In</a>
+  <a type="button" class="btn btn-success" href="sign.html">Sign Up</a>
+  </div>
+</div>
+
+<!-- JavaScript for sidenav -->
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+<!-- Top navigation taken from getbootstrap.com -->
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <!-- Hamburger icon used to activate sidenav -->
+	<a class="navbar-brand" onclick="openNav()" href="#">&#9776;</a>
+    <a class="navbar-brand" href="index.html">TECHSWIPE</a>
+    
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+	  <!-- Dropdown button from bootstrap in sidenav -->
+       <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Categories
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+			    <li><a class="dropdown-item" href="products.html">All products</a></li>
+                <li><a class="dropdown-item" href="homeapp.html">Home Tech</a></li>
+                <li><a class="dropdown-item" href="music.html">Music</a></li>
+                <li><a class="dropdown-item" href="gaming.html">Gaming</a></li>
+                <li><a class="dropdown-item" href="fitness.html">Fitness</a></li>
+				<li><a class="dropdown-item" href="accessories.html">Accessories</a></li>
+            </ul>
+  </div>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a type="button" class="btn btn-primary" href="log.html">Log In</a>
+        </li>
+        <br>
+        <li class="nav-item">
+          <a type="button" class="btn btn-success" href="sign.html">Sign Up</a>
+        </li>
+        
+		<div class="cart">
+		<!-- shopping cart icon taken from awesome-fonts.com -->
+		  <li class="nav-item"><a class="btn btn-secondary" href="payment.html" ><i class="fa fa-shopping-cart"></i></</a>
+		  <!-- Our own javascript function increases this number when item is added to cart -->
+          <a class="btn btn-secondary" id="incrementText" href="payment.html" >0</a>
+		  <li>
+        </div>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+  <section class="py-4 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Fitness</h1>
+       <p class="lead text-muted"> Shop the latest and best quality electronic fitness equipment </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="album py-2 bg-light">
+    <div class="container">
+      
+	  <!-- container for each item -->
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="card shadow-sm">
+		    <!-- image needs to be accessed in images folder -->
+            <center><img src="images/applewatch.jpg" width="100%" alt="Samsung TV"></center> 
+            <div class="card-body">
+			<!-- Button categorizes item -->
+			  <strong><p> €249.00 <br><a href="fitness.html" class="btn btn-light btn-sm" role="button">Fitness</a></p></strong>
+              <p class="card-text">Apple - Smart watch series 3</p>
+			  <!-- When this button is pressed, the number in the cart increases by one -->
+			  <p><button class="btn btn-primary btn-sm" role="button" onclick="incrementButton()">Add to Cart</p>
+            </div>
+          </div>
+        </div>
+		
+		<!-- Next item displayed -->
+        <div class="col">
+          <div class="card shadow-sm">
+            <center><img src="images/stimulators.jpg" width="100%" alt="Samsung TV"></center> 
+            <div class="card-body">
+			  <strong><p> €29.99 <br><a href="fitness.html" class="btn btn-light btn-sm" role="button">Fitness</a></p></strong>
+              <p class="card-text">StrongMuscle  - Muscle stimulators bundle </p>
+              <p><button class="btn btn-primary btn-sm" role="button" onclick="incrementButton()">Add to Cart</p>			  
+            </div>
+          </div>
+        </div>
+		
+		<!-- Next item displayed -->
+        <div class="col">
+          <div class="card shadow-sm">
+            <center><img src="images/fitbit.png" width="100%" alt="Samsung TV"></center> 
+            <div class="card-body">
+			  <strong><p> €149.99 <br><a href="fitness.html" class="btn btn-light btn-sm" role="button">Fitness</a></p></strong>
+              <p class="card-text">Fitbit - Charge 4 smart watch</p>
+              <p><button class="btn btn-primary btn-sm" role="button" onclick="incrementButton()">Add to Cart</p>			  
+            </div>
+          </div>
+        </div>
+
+        <!-- Next item displayed -->
+        <div class="col">
+          <div class="card shadow-sm">
+            <center><img src="images/massagegun.jpg" width="100%" alt="Samsung TV"></center> 
+            <div class="card-body">
+			  <strong><p> €99.99 <br><a href="fitness.html" class="btn btn-light btn-sm" role="button">Fitness</a></p></strong>
+              <p class="card-text">RecoverFun - Massage gun </p>
+              <p><button class="btn btn-primary btn-sm" role="button" onclick="incrementButton()">Add to Cart</p>			  
+            </div>
+          </div>
+        </div>
+		
+		<!-- Next item displayed -->
+        <div class="col">
+          <div class="card shadow-sm">
+            <center><img src="images/statsports.jpg" width="100%" alt="Samsung TV"></center> 
+            <div class="card-body">
+			  <strong><p> €235.99 <br><a href="fitness.html" class="btn btn-light btn-sm" role="button">Fitness</a></p></strong>
+              <p class="card-text">StatSports - Athlete performance tracker</p>
+              <p><button class="btn btn-primary btn-sm" role="button" onclick="incrementButton()">Add to Cart</p>			  
+            </div>
+          </div>
+        </div>
+		
+		<!-- Next item displayed -->
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="card shadow-sm">
+            <center><img src="images/fc4.jpg" width="100%" alt="Samsung TV"></center> 
+            <div class="card-body">
+        <strong><p> €129.99 <br><a href="fitness.html" class="btn btn-light btn-sm" role="button">Fitness</a></p></strong>
+              <p class="card-text">Fitbit Charge 4 Fitness Tracker With GPS Wristband - Rosewood </p>
+        <p><button class="btn btn-primary btn-sm" role="button" onclick="incrementButton()">Add to Cart</p>
+            </div>
+          </div>
+        </div>
+    
+	    <!-- Next item displayed -->
+        <div class="col">
+          <div class="card shadow-sm">
+            <center><img src="images/amazfit.jpg" width="100%" alt="Samsung TV"></center> 
+            <div class="card-body">
+        <strong><p> €149.99 <br><a href="fitness.html" class="btn btn-light btn-sm" role="button">Fitness</a></p></strong>
+              <p class="card-text">Amazfit GTS 2 1.65" Bluetooth Smart Watch - Midnight Black </p>
+              <p><button class="btn btn-primary btn-sm" role="button" onclick="incrementButton()">Add to Cart</p>       
+            </div>
+          </div>
+        </div>
+    
+	    <!-- Next item displayed -->
+        <div class="col">
+          <div class="card shadow-sm">
+            <center><img src="images/blau.jpg" width="100%" alt="Samsung TV"></center> 
+            <div class="card-body">
+        <strong><p> €49.99 <br><a href="fitness.html" class="btn btn-light btn-sm" role="button">Fitness</a></p></strong>
+              <p class="card-text">Blaupunkt Connected Smart Watch - Black</p>
+              <p><button class="btn btn-primary btn-sm" role="button" onclick="incrementButton()">Add to Cart</p>       
+            </div>
+          </div>
+        </div>
+
+        <!-- Next item displayed -->
+        <div class="col">
+          <div class="card shadow-sm">
+            <center><img src="images/huawei.jpg" width="100%" alt="Samsung TV"></center> 
+            <div class="card-body">
+        <strong><p> €49.99 <br><a href="fitness.html" class="btn btn-light btn-sm" role="button">Fitness</a></p></strong>
+              <p class="card-text">Huawei Band 6 1.47" Smartwatch - Amber Sunrise </p>
+              <p><button class="btn btn-primary btn-sm" role="button" onclick="incrementButton()">Add to Cart</p>       
+            </div>
+          </div>
+        </div>
+    
+	    <!-- Next item displayed -->
+        <div class="col">
+          <div class="card shadow-sm">
+            <center><img src="images/xplora.jpg" width="100%" alt="Samsung TV"></center> 
+            <div class="card-body">
+        <strong><p> €59.99 <br><a href="fitness.html" class="btn btn-light btn-sm" role="button">Fitness</a></p></strong>
+              <p class="card-text">Xplora Xmove Activity Smartwatch With Bluetooth Tracker - Pink</p>
+              <p><button class="btn btn-primary btn-sm" role="button" onclick="incrementButton()">Add to Cart</p>       
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- Taken from Bootstrap.com, brings user back to top of page -->
+<footer class="text-muted py-5">
+  <div class="container">
+    <p class="float-end mb-1">
+	  <!-- Uses Bootstrap javascript function to brinf to top -->
+      <a onclick="topFunction()" href="#">Back to top</a>
+    </p>
+    
+  </div>
+</footer>
+    <!-- Link to more Bootstrap javascript -->
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+      
+  </body>
+</html>
